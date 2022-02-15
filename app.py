@@ -7,6 +7,11 @@ class ZoomOpener:
         self.link = link
 
     def open_link(self):
+        """
+        zoom conference id is everything after "?confno" till ?pwd
+        conference password - ?pwd till the end of the string
+        to use zoommtg url gotta replace "?pwd" with "&pwd"
+        """
         r = re.compile(r"[0-9]{10}")
         get_conf_id = r.findall(self.link)
         get_password = self.link.split("?pwd=")
@@ -14,7 +19,6 @@ class ZoomOpener:
             f"zoommtg://zoom.us/join?confno={get_conf_id[0]}&pwd={get_password[1]}"
         )
         webbrowser.open(construct_proper_string)
-        print("called")
         return
 
     def reconnect(self):
