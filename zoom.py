@@ -12,7 +12,7 @@ class ZoomOpener:
         conference password - ?pwd till the end of the string
         to use zoommtg url gotta replace "?pwd" with "&pwd"
         """
-        r = re.compile(r"[0-9]{10}")
+        r = re.compile(r"[0-9]{10,12}")
         get_conf_id = r.findall(self.link)
         get_password = self.link.split("?pwd=")
         construct_proper_string = (
@@ -26,5 +26,5 @@ class ZoomOpener:
         return
 
 
-z = ZoomOpener("https://zoom.us/j/3700022521?pwd=aWh5T2UzaVF4Nm14S1FEdFNJejJSUT09")
-z.open_link()
+# z = ZoomOpener("https://zoom.us/j/3700022521?pwd=aWh5T2UzaVF4Nm14S1FEdFNJejJSUT09")
+# z.open_link()
