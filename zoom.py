@@ -24,7 +24,3 @@ class ZoomOpener:
     def reconnect(self):
         self.open_link()
         return
-
-
-# z = ZoomOpener("https://zoom.us/j/3700022521?pwd=aWh5T2UzaVF4Nm14S1FEdFNJejJSUT09")
-# z.open_link()
